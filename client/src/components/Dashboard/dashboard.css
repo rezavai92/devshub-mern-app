@@ -1,0 +1,35 @@
+.form-data-basic{
+    position: relative;
+    display : flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.form-data-basic div{
+    
+    margin: 5%;
+}
+.add-experience-header{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid silver;
+    
+}
+
+.add-education-header{
+    margin-top: 12%;
+}
+.addExperienceHandler{
+
+    cursor: pointer;
+}
+.spinner div{
+
+
+    position: absolute;
+    top : 50%;
+    left:25%;
+    
+    
+}

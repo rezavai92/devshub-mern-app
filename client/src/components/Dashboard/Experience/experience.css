@@ -1,0 +1,12 @@
+.experience{
+    position: relative;
+    margin:5% 0% 5% 0%;
+}
+
+.spinner{
+
+    position: absolute;
+    top:50%;
+    left:50%;
+    
+}

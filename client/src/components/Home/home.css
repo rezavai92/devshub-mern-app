@@ -1,0 +1,28 @@
+.home{
+
+    
+    padding: 2%  ;
+    margin-top: 0.5%;
+    
+}
+.postButton{
+
+    float: right;
+}
+
+.create-post{
+
+    margin: 1% 0% 10%;
+}
+.posts{
+
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+@media screen and (max-width : 768px){
+
+    .create-post{
+        margin-bottom: 17%;
+    }
+}

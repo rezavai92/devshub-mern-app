@@ -1,0 +1,5 @@
+{
+
+    "mongoURL" : "mongodb+srv://reza52:reza52@cluster0.ry9eq.mongodb.net/DevsHubDB?retryWrites=true&w=majority",
+    "jwtSecret" : "devconnectorwebtoken"
+}

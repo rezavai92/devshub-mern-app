@@ -1,0 +1,52 @@
+.comment{
+
+    border: 1px solid silver;
+    padding : 1%;
+    border-radius: 1rem;
+    
+    height: 100%;
+    background-color: #e6e3e3;
+    margin:1%;
+}
+
+.photo-comment{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    
+}
+.comment-pro-pic{
+    margin-right: 1%;
+}
+
+.date-name-flex{
+ 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.date{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: right;
+}
+
+.customModalPosition{
+
+    position: absolute;
+    top: 0%;
+    right:5%;
+    z-index: +5;
+}
+/* .date{
+    margin-left: 70%;
+}
+@media screen and (max-width:768px){
+
+    .date{
+        margin-left: 4%;
+    }
+} */
