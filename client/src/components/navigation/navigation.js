@@ -9,7 +9,7 @@ const Navigation = ()=>{
 
    console.log("from navigation")
 
-  const {loginToken,confirmLogout} = useContext(context)
+  const {loginToken,confirmLogout,loggedInUserId} = useContext(context)
   
 return (<div>
     <Navbar bg="dark" variant="dark"  expand="lg">
@@ -20,13 +20,7 @@ return (<div>
       <Nav.Link ><Link to="/home" style={{color:"white"}} >Home</Link></Nav.Link>
       {loginToken?<Nav.Link ><Link to="/dashboard" style={{color:"white"}}  >Dashboard</Link></Nav.Link>:null }
       <Nav.Link ><Link to="/developers" style={{color:"white"}}  >Developers</Link></Nav.Link>
-      <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-      </NavDropdown>
+
     </Nav>
      
      {!loginToken?
@@ -35,9 +29,14 @@ return (<div>
       <Nav.Link  ><Link to="/signup" style={{color:"white"}}  >Sign Up</Link></Nav.Link>
       </Nav> 
       :
+      <Nav>
+              <Nav.Link ><Link to={`/developer/${loggedInUserId}`} style={{color:"white"}}
+      
+       >User</Link></Nav.Link>
       <Nav.Link ><Link to="/login" style={{color:"white"}}
       onClick={()=>{confirmLogout()}}
        >Log Out</Link></Nav.Link>
+      </Nav>
     }
   </Navbar.Collapse>
 </Navbar>

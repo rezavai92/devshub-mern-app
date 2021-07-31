@@ -42,8 +42,8 @@ const GetProfilePic = (props)=>{
     },[])
 
     return (<div>
-        <img src={image} height={props.width} width={props.height}
-        style={{borderRadius:`${props.borderRadius}`}}
+        <img src={image}  height={props.width} width={props.height}
+        style={{ border:`${props.border}`, borderRadius:`${props.borderRadius}`}}
         />
     </div>)
 }

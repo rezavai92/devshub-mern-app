@@ -326,7 +326,9 @@ return(<div className="container">
     <Form enctype="multipart/form-data" onSubmit= {(e)=>{saveBasicProfileHandler(e)} }>
 
         <div className="userinfo" >
-            <img src={img} alt="user photo"/>
+           <div className="roundedImage" >
+           <img src={img} alt="user photo" height="200px" width="200px" />
+           </div>
         <h2>
         <FontAwesomeIcon icon={faUserCircle} /> 
             {" " + "User"}</h2>

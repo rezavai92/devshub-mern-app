@@ -142,7 +142,7 @@ const aboutHandler = ()=>{
 
                <div className="name-photo">
                   {image?
-                   <GetProfilePic  imgData={image} height="250px" width="250px" />:null}
+                   <GetProfilePic  imgData={image} borderRadius="50%" border="2px solid silver"  height="250px" width="250px" />:null}
                    <h5>{userName}</h5>
                </div>
                 <p className="top-profile-text" >

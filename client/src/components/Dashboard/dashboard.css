@@ -16,6 +16,15 @@
     border: 1px solid silver;
     
 }
+.roundedImage{
+    display: flex;
+    justify-content: center;
+
+}
+.roundedImage img{
+    border-radius: 50%;
+    border: 4px solid silver ;
+}
 
 .add-education-header{
     margin-top: 12%;
