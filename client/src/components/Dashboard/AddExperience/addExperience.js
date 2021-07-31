@@ -17,7 +17,10 @@ const[description,setDescription] = useState();
 
 const {loginToken} = useContext(context)
 
+useEffect(()=>{
 
+    
+},[])
 const titleChangeHandler=(e)=>{
     setTitle(e.target.value)
 }
@@ -62,10 +65,13 @@ try{
     })
     //setWillSpin(false)
     props.resetExperience()
-    setTimeout(()=>{setSaving(false)},2500)
+    setSaving(false)
+   // setTimeout(()=>{setSaving(false)},2500)
 }
 catch(error){
     console.log(error)
+    setSaving(false)
+    window.alert("Please Complete basic profile before adding experience")
 }
 
 }

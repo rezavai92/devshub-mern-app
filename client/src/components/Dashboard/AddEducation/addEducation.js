@@ -66,14 +66,14 @@ const AddEducation = (props)=>{
                     }
                 })
                 props.resetEducation()
-                setTimeout(()=>{setSaving(false)},2500)
+                // setTimeout(()=>{setSaving(false)},2500)
 
             }
 
 
             catch(error){
-
-
+                window.alert("Please complete basic profile before addin education")
+                setSaving(false)
             }
         }
 

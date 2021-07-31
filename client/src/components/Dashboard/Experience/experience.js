@@ -74,12 +74,14 @@ const Experience = (props)=>{
 
                 props.onDeletion()
               //  console.log("after props.ondeletion")
-                setTimeout(()=>{setDeleting(false)},2500)
+               // setTimeout(()=>{setDeleting(false)},2500)
+               setDeleting(false)
         
             }
             catch(error){
 
                 console.log(error)
+                setDeleting(false)
 
             }
         }

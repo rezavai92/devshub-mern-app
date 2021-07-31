@@ -30,7 +30,7 @@ const Dashboard = ()=>{
     const[ username,setUsername ] = useState("")
     const[email ,setEmail ] = useState("")
     const[status ,setStatus ] = useState("")
-    const[skill,setSkill ] = useState("")
+    const[skill,setSkill ] = useState([])
     const[company ,setCompany ] = useState("")
     const[facebook , setFacebook ] = useState("")
     const[twitter,setTwitter ] = useState("")
@@ -115,7 +115,7 @@ useEffect(()=>{
 
 
 
-      //  console.log("user info ",userInfo)
+        console.log("user info ",myProfile)
           
         //    console.log("from dashboard.js ",myProfile);
             const {
@@ -131,23 +131,25 @@ useEffect(()=>{
                 
                 location,
             } = myProfile.data.profile
-
-           if(photo.data){
+           // console.log("experience ae",experience)
+           console.log(photo)
+           if(photo){
             let base64Flag = 'data:image/jpeg;base64,';
             let imageStr =arrayBufferToBase64(photo.data.data);
 
             setImg(base64Flag + imageStr)
            }
+           console.log("BAAAL")
             setBio(bio);
             
             setCompany(company);
             setStatus(status);
-            setSkill(skills.toString());
+            setSkill([...skills]);
             setPhoto(photo)
             setWebsite(website);
            
             setLocation(location);
-           
+            console.log("BAAAL")
             if(social){
                 const {facebook,twitter,github,instagram,youtube,linkedin} =social;
            // console.log("existing experience form use effect of dashboard ")
@@ -161,9 +163,11 @@ useEffect(()=>{
            
             const newExperiences=[...experience]
             const newEducation =[...education]
-          
-            setExistingEducation(newEducation)
-            setExistingExperiences(newExperiences);
+          // console.log("new ex are")
+            setExistingEducation([...newEducation])
+            setExistingExperiences([...newExperiences]);
+            
+        
            
         }
         catch(err){
@@ -173,6 +177,7 @@ useEffect(()=>{
     }
 
     if(loginToken){
+    
     fetchData()
     }
 
@@ -304,45 +309,7 @@ const addExperienceHandler = ()=>{
 
 
 
-const mappedExistingEducation = existingEducation.map((edu)=>{
 
-
-    return(<Education
-    
-    key={edu._id}
-    id={edu._id}
-    school={edu.school}
-    degree ={edu.degree}
-    fieldOfStudy={edu.fieldofstudy}
-    from={edu.from}
-    to={edu.to}
-    current={edu.current}
-    description={edu.description}
-    onDeletion={detectEducationDeletion}
-    >
-
-
-    </Education>)
-})
-const mappedExistingExperiences =existingExperiences.map((e)=>{
-   return (
-       <Experience  
-    key ={e._id}   
-    id={e._id} 
-    title={e.title} 
-    company ={e.company}
-    location ={e.location}
-    from={e.from}
-    to= {e.to}
-    current ={e.current}
-    description ={e.description}
-    onDeletion={detectDeletion}
-    >
-
-    </Experience>
-
-    )
-})
 //console.log("mapped existing experience ",mappedExistingExperiences)
 
 return(<div className="container">
@@ -359,6 +326,7 @@ return(<div className="container">
     <Form enctype="multipart/form-data" onSubmit= {(e)=>{saveBasicProfileHandler(e)} }>
 
         <div className="userinfo" >
+            <img src={img} alt="user photo"/>
         <h2>
         <FontAwesomeIcon icon={faUserCircle} /> 
             {" " + "User"}</h2>
@@ -448,7 +416,25 @@ Save Profile
 
    {experience}
    {
-        mappedExistingExperiences
+        existingExperiences.map((e)=>{
+            return (
+                <Experience  
+             key ={e._id}   
+             id={e._id} 
+             title={e.title} 
+             company ={e.company}
+             location ={e.location}
+             from={e.from}
+             to= {e.to}
+             current ={e.current}
+             description ={e.description}
+             onDeletion={detectDeletion}
+             >
+         
+             </Experience>
+         
+             )
+         })
     } 
 
   </div>
@@ -472,7 +458,26 @@ Save Profile
 
  
 {education}
-{mappedExistingEducation}
+{existingEducation.map((edu)=>{
+
+
+return(<Education
+
+key={edu._id}
+id={edu._id}
+school={edu.school}
+degree ={edu.degree}
+fieldOfStudy={edu.fieldofstudy}
+from={edu.from}
+to={edu.to}
+current={edu.current}
+description={edu.description}
+onDeletion={detectEducationDeletion}
+>
+
+
+</Education>)
+})}
 <div style={{marginTop:"2%", textAlign:"center"}} >
     <Button className="deactivate" variant="danger"
     

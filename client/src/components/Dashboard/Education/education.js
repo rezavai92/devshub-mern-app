@@ -129,14 +129,12 @@ const Education = (props)=>{
             })
 
             props.onDeletion()
-            setTimeout(() => {
-                setDeleting(false)
-            }, 2500);
+            setDeleting(false)
         }
 
         catch(error){
 
-
+            setDeleting(false)
         }
         }
 
@@ -160,7 +158,7 @@ const Education = (props)=>{
     <Form.Control type="text" onChange={ (e)=>{descriptionChangeHandler(e)} } value={description} placeholder="description" />
 
     <div style={{marginTop:"1%"}} >
-    <Button variant="success" type="submit" >Add</Button>
+    <Button variant="success" type="submit" >Update</Button>
     <Button variant="warning" onClick={()=>{deleteEducationeHandler() }  }  >Delete </Button>
     </div>
     </Form>
