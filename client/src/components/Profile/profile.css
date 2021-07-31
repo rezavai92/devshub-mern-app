@@ -3,9 +3,14 @@
  .top-profile {
 
     margin-top: 2%;
+    display: flex;
+    justify-content: flex-start;
 }
 
-
+.whereabouts{
+    padding: 5%;
+    box-sizing: border-box;
+}
 @media screen and (max-width: 480px){
 
     .top-profile {

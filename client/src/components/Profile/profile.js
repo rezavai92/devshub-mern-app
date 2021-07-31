@@ -143,9 +143,10 @@ const aboutHandler = ()=>{
                <div className="name-photo">
                   {image?
                    <GetProfilePic  imgData={image} borderRadius="50%" border="2px solid silver"  height="250px" width="250px" />:null}
-                   <h5>{userName}</h5>
+                   <h2>{userName}</h2>
                </div>
-                <p className="top-profile-text" >
+              <div className="whereabouts" >
+              <p className="top-profile-text" >
                     <FontAwesomeIcon icon={faUserTie}  color="silver" />
                     { " "+ status}</p>
                 <p  className="top-profile-text" >
@@ -162,6 +163,7 @@ const aboutHandler = ()=>{
                     
                 </p>
                 :null}
+              </div>
             </div>
             
             <div className="skills" >

@@ -1,8 +1,9 @@
 import React, { useState ,useContext, useEffect} from 'react'
-import { Redirect } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
+import { Redirect,Link } from 'react-router-dom'
 import {context} from '../../contexts/context'
-import Login from '../LogIn/login'
 
+import './index.css'
 const Index = ()=>{
 
      const {loginToken} = useContext(context)
@@ -11,7 +12,22 @@ const Index = ()=>{
     return(<div>
 
        {loginToken? <Redirect to="/home" /> 
-    : <Login /> 
+    :<>
+     <div  className="cover"> 
+      
+      </div>
+      <div className="overlay" >
+      <div className="link-flex" >
+            <div>
+               <Link to="/login" style={{color:"black"}} >Log In</Link>
+            </div>
+            <div>
+               <Link to="/signup" style={{color :"black"}} >Sign Up</Link>
+            </div>
+         </div>
+      </div>
+
+    </>
     }
     </div>)
 }

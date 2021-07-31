@@ -6,7 +6,7 @@
 }
 .form-data-basic div{
     
-    margin: 5%;
+    margin: 1% 5%;
 }
 .add-experience-header{
 
@@ -16,9 +16,13 @@
     border: 1px solid silver;
     
 }
+
 .roundedImage{
     display: flex;
     justify-content: center;
+    background-color: rgba(0,0,0,0.6);
+    padding : 25px;
+    box-sizing: border-box;
 
 }
 .roundedImage img{

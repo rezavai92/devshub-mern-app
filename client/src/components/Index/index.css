@@ -1,0 +1,33 @@
+.overlay {
+    position: absolute; /* Sit on top of the page content */
+    display: block; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100vh; /* Full height (cover the whole page) */
+    top:9.999999%;
+    background-color: rgba(0,0,0,0.7); /* Black background with opacity */
+    z-index: 100; /* Specify a stack order in case you're using a different order for other elements */
+/* Add a pointer on hover */
+  }
+.link-flex{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+}
+.link-flex div{
+    background-color: #a2bce0;
+
+    padding: 15px;
+
+    font-weight: 400;
+}
+  .cover{
+    
+    
+    
+    background:  url('../../images/showcase.jpg');
+    background-size: cover;
+    height: 100vh;
+    background-repeat: no-repeat;
+  }
